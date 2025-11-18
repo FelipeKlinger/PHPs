@@ -1,6 +1,6 @@
 <?php
 
-require_once __DIR__ . "../models/moviesModel.php";
+require_once __DIR__ . "/../models/moviesModel.php";
 
 class MoviesController
 {
@@ -13,11 +13,13 @@ class MoviesController
     public function llegirMovies(){
 
         $LlistaMovies = $this->model->llegirMovies();
-        require __DIR__ .'../views/llegir.html';
-        header('location: index.php') ;
-        exit();
+        require __DIR__ .'/../views/llegir.php';
 
     } 
+
+    public function AfegirMovies() {
+        require __DIR__ .'/../views/afegir.php';
+    }
 
 }
 
