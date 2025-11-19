@@ -19,6 +19,7 @@ class librosControllers
 
     public function AgregarLibro()
     {
+        $messege = "";
         if ($_SERVER['REQUEST_METHOD'] === "POST") {
 
             $nombre = trim($_POST['nombre'] ?? "");
@@ -27,9 +28,10 @@ class librosControllers
             $editorial = trim($_POST['autor']) ?? "";
 
             if ($nombre == "" || $autor == "" || $paginas == "" || $editorial == "") {
-                echo "Ningun campo debe estar vacio";
+                $messege = "Ningun campo debe estar vacio";
             } else {
                 $this->model->AgregarLibro($nombre, $autor, $paginas, $editorial);
+                $messege = "";
                 header("Location: index.php"); 
                 exit();
             }

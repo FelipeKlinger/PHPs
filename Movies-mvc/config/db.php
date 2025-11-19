@@ -1,9 +1,9 @@
-<?php
+<?php 
 
-$DB_HOST = 'localhost';
-$DB_NAME = 'movies_mvc';
-$DB_USER = 'root';
-$DB_PASS = '';
+$DB_HOST = "localhost"; 
+$DB_NAME = "movies_mvc"; 
+$DB_USER = "root"; 
+$DB_PASS = ""; 
 
 $dsn = "mysql:host=$DB_HOST;dbname=$DB_NAME;charset=utf8mb4";
 
@@ -14,11 +14,7 @@ try {
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES => false,
     ]);
-    
-    echo "conexion exitosa" ;
-
-} catch (PDOException $e) {
-    die(" Error de conexión:" . $e ->getMessage()); 
+} catch (PDOException $error) {
+    echo $error->getMessage();
 }
-
 ?>
